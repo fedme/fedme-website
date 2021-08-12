@@ -1,5 +1,5 @@
 ---
-name: Federuci Neubu
+name: Federico Meini
 avatar: /static/images/avatar.png
 occupation: Freelance Software Engineer
 company: Turn.io

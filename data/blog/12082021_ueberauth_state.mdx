@@ -1,0 +1,54 @@
+---
+title: 'Elixir Überauth: how to keep state between request and callback?'
+date: 2021-08-12T13:32:14Z
+tags: ['elixir', 'ueberauth', 'oauth', 'authentication']
+draft: false
+summary: 'Überauth discards state, we can use session cookies instead.'
+layout: PostSimple
+---
+
+[Überauth](https://github.com/ueberauth/ueberauth) is probably the go-to OAuth login extension for Elixir projects. 
+
+The team behind the library has recently improved its security against [CSRF attacks](https://github.com/ueberauth/ueberauth_google/pull/82). Unfortunately, the security improvement comes at a cost for the end user, as it is now impossible to keep state between the *request* and *callback* phases of the OAuth process.
+
+## Background
+
+Most OAuth providers (e.g. *Google*) allow developers to pass custom state inside a `state` query parameter as part od the *request* URL. The OAuth provider then passes the state back when calling our *callback* endpoint.
+
+Überauth now uses the `state` query parameter to pass the CSRF token, overwriting whatever custom state developers put in the request URL.
+
+## Workaround
+Luckily, there is another way. We can put our custom state in a session cookie in the [request phase](https://github.com/ueberauth/ueberauth#request-phase) and retrieve it from the session in the [callback phase](https://github.com/ueberauth/ueberauth#callback-phase).
+
+### Code example
+The following code snippet shows how to save some custom state in the session cookie and retrieve in the *callback* phase of the OAuth flow.
+
+```elixir
+defmodule MyAppWeb.AuthController do
+  use MyAppWeb, :controller
+ 
+  plug(Ueberauth, providers: [:google_custom])
+
+  @provider_config {Ueberauth.Strategy.Google, [default_scope: "email profile"]}
+
+  def request(conn, %{"provider" => "google", "custom_state" => custom_state) do
+    # Store custom state in the session
+    conn
+    |> put_session(:auth_custom_state, custom_state)
+    |> Ueberauth.run_request("google", @provider_config)
+  end
+
+  def callback(conn, params) do
+    %{assigns: %{ueberauth_auth: auth}} =
+      conn
+      |> Ueberauth.run_callback("google", @provider_config)
+
+    # Get custom state back from session
+    auth_custom_state = get_session(conn, :auth_custom_state)
+
+    IO.inspect(auth_custom_state, label: "Auth custom state")
+  end
+end
+```
+
+With that code, I am able to start the OAuth flow passing some custom state in the URL (e.g. `https://localhost:4000/auth/google?custom_state=some_values_here`) and then take it back from the session in the `callback` function.
