@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'Federico Meini',
   author: 'Federico Meini',
   headerTitle: 'fedme',
-  description: 'Federico Meini - Software development',
+  description: 'Software development',
   language: 'en-us',
   siteUrl: 'https://fedme.dev',
   siteRepo: 'https://github.com/fedme/fedme-website',
