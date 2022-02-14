@@ -25,7 +25,13 @@ export default function Home({ posts }) {
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {/* {siteMetadata.description} */}
             Software engineer working with social impact organisations at&nbsp;
-            <a href="https://turn.io">Turn.io</a>.
+            <Link
+              href="https://turn.io"
+              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              aria-label="Turn.io"
+            >
+              Turn.io
+            </Link>.
           </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
