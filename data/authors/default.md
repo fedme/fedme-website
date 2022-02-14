@@ -9,6 +9,8 @@ linkedin: https://www.linkedin.com/in/fedemeini/
 github: https://github.com/fedme
 ---
 
-Freelance software developer working with functional programming and distributed, fault-tolerant systems (mainly Elixir/OTP). 
+Software engineer working with social impact organisations at https://turn.io.
 
-Currently learning blockchain and smart contracts.
+Building distributed, fault-tolerant systems with Elixir/OTP. 
+
+
