@@ -23,7 +23,8 @@ export default function Home({ posts }) {
             {siteMetadata.title}
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
+            {/* {siteMetadata.description} */}
+            Software engineer working with social impact organisations at <a href="https://turn.io">Turn.io</a>.
           </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">

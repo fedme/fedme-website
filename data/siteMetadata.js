@@ -11,7 +11,7 @@ const siteMetadata = {
   socialBanner: '/static/images/twitter-card.png',
   email: 'address@yoursite.com',
   github: 'https://github.com/fedme',
-  twitter: 'https://twitter.com/fedmedev',
+  twitter: '',
   facebook: '',
   youtube: '',
   linkedin: 'https://www.linkedin.com/in/fedemeini/',
