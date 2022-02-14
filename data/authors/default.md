@@ -8,7 +8,7 @@ linkedin: https://www.linkedin.com/in/fedemeini/
 github: https://github.com/fedme
 ---
 
-Software engineer working with social impact organisations at https://turn.io.
+Software engineer working with social impact organisations at [Turn.io](https://turn.io).
 
 Building distributed, fault-tolerant systems with Elixir/OTP. 
 
