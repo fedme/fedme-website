@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'Federico Meini',
   author: 'Federico Meini',
   headerTitle: 'fedme',
-  description: 'Software development',
+  description: 'Software engineer working with social impact organisations at https://turn.io.',
   language: 'en-us',
   siteUrl: 'https://fedme.dev',
   siteRepo: 'https://github.com/fedme/fedme-website',
