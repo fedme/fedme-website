@@ -31,7 +31,8 @@ export default function Home({ posts }) {
               aria-label="Turn.io"
             >
               Turn.io
-            </Link>.
+            </Link>
+            .
           </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
