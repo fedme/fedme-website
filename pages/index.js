@@ -24,7 +24,7 @@ export default function Home({ posts }) {
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {/* {siteMetadata.description} */}
-            Software engineer working with social impact organisations at
+            Software engineer working with social impact organisations at&nbsp;
             <a href="https://turn.io">Turn.io</a>.
           </p>
         </div>
