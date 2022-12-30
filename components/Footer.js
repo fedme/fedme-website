@@ -22,9 +22,7 @@ export default function Footer() {
           <Link href="/">{siteMetadata.title}</Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
-            Tailwind Nextjs Theme
-          </Link>
+          P.IVA IT01966540492 - Via Strozzi 6 - 57123 Livorno (ITA)
         </div>
       </div>
     </footer>
