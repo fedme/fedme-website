@@ -22,7 +22,7 @@ export default function Footer() {
           <Link href="/">{siteMetadata.title}</Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          P.IVA IT01966540492 - Via Strozzi 6 - 57123 Livorno (ITA)
+          MEINI FEDERICO - P.IVA IT01966540492 - Via Pier Paolo Pasolini 3A 20151 Milano (MI)
         </div>
       </div>
     </footer>
